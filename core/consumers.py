@@ -3,7 +3,6 @@ from channels.generic.websocket import WebsocketConsumer
 import json
 import paho.mqtt.subscribe as subscribe
 
-
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
         self.room_name = self.scope['url_route']['kwargs']['room_name']
@@ -51,8 +50,8 @@ class ChatConsumer(WebsocketConsumer):
 
 class MonitoringConsumer(WebsocketConsumer):
     def connect(self):
-        self.mac_address = self.scope['url_route']['kwargs']['room_name']
-        self.monitoring_group_name = 'monitoring_%s' % self.mac_address
+        self.mac_address = self.scope['url_route']['kwargs']['mac_address']
+        self.monitoring_group_name = 'monitoring_%s' % "-".join(self.mac_address.split(':'))
 
         # Join room group
         async_to_sync(self.channel_layer.group_add)(
@@ -69,10 +68,10 @@ class MonitoringConsumer(WebsocketConsumer):
             self.channel_name
         )
 
-    def subscribe_once(self, mac_address):
-        hostname = '192.168.10.180'
+    def receive(self, text_data):
+        hostname = '192.168.10.165'
         msg = subscribe.simple(
-            topics=f'monitoramento/{mac_address}', 
+            topics=f'monitoramento/{self.mac_address}', 
             qos=0,
             retained=False, 
             hostname=hostname,
@@ -81,8 +80,7 @@ class MonitoringConsumer(WebsocketConsumer):
             auth={
                 'username': 'iot-autodoc',
                 'password': 'IOTautodoc19!'
-                },
-            protocol=mqtt.MQTTv311
+                }
             )
 
         async_to_sync(self.channel_layer.group_send)(
@@ -94,13 +92,13 @@ class MonitoringConsumer(WebsocketConsumer):
         )
 
     # Receive message from WebSocket
-    def receive(self, text_data):
+    def receive1(self, text_data):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
 
         # Send message to room group
         async_to_sync(self.channel_layer.group_send)(
-            self.room_group_name,
+            self.monitoring_group_name,
             {
                 'type': 'monitoring_message',
                 'message': message
