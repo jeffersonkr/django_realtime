@@ -25,7 +25,7 @@ SECRET_KEY = 'bp9x#sn-tw+-8$e(o68@#rypjerxf-lr@bvj7jmc$+mxd=byr2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +70,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_realtime.wsgi.application'
+ASGI_APPLICATION = 'django_realtime.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 
 # Database
