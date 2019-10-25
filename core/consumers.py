@@ -26,8 +26,8 @@ class MonitoringConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         hostname = '192.168.10.198'
         msg = subscribe.simple(
-            topics=f'monitoramento/{self.mac_address}',
-            retained=True, 
+            topics=f'monitoramento/{self.mac_address}/',
+            retained=False, 
             hostname=hostname,
             port=1883, 
             keepalive=60, 
@@ -36,7 +36,6 @@ class MonitoringConsumer(AsyncWebsocketConsumer):
                 'password': 'IOTautodoc19!'
                 }
             )
-
         await self.channel_layer.group_send(
             self.monitoring_group_name,
             {
