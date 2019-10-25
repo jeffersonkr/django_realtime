@@ -26,9 +26,8 @@ class MonitoringConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         hostname = '192.168.10.198'
         msg = subscribe.simple(
-            topics=f'monitoramento/{self.mac_address}', 
-            qos=0,
-            retained=False, 
+            topics=f'monitoramento/{self.mac_address}',
+            retained=True, 
             hostname=hostname,
             port=1883, 
             keepalive=60, 

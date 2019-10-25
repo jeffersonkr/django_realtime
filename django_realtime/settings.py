@@ -129,3 +129,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+FIREBASE_CONFIG = {
+    "type": "service_account",
+    "project_id": "gdfor-prod",
+    "private_key_id": "5d7c9163c02a77d35ebd7e9a2d627ce861f69682",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDfzBAwBrjd/Gpw\nOXYbprXUSH2XP6ahzkOvwOQRK9kwHFtjHYH3QF59g5W9nN07+PRuHOHN9zB6jR7E\njcppQ4lyXYOy+wBVzxTKsnb1MpOJiYk0WmPJ7uDEgwJddgsQX89lnHF1e15nhIID\nfG5pufOzS6prHOhO00RToDYI2n38iKY9O+1q9iQX8oOP54DeyBhri+ZDdvuCURTP\nZsknYgc/shyFzykbU558lttQgY8FEIk2YKeqDh3UUxIQMFjvf4tqWv1Au4mlPxU/\nP8X68TpvXd5P04k0MFI3dK09HRNQdb/c4eKLvyMpXgz1Jqc2ocsXmEGYBUQBaKLk\nVeEjEpFVAgMBAAECggEAMAyRTipnTxvmY11m7wViRSdiNZLALT3KmQW+QbSLHzH7\nagKYGJSMpQCXKfxvoHRxUGHpli3UDf/WAwfZVTPfovsSb19GIWZCVcmu0jKvbAho\nOaINijm8Ltzc6WGSewvDDNMjpgBckrenrWVuFEuNF+nvNyuf8eqYoSbE6y4z/f+W\n2+S88LAxVg2wU6ofHnNyioQPtLG2tmctxpt8OBoPaP3GGvVOA5Fm+iQFKt3e8/lb\nvO6vPGzK3Ccj9NLKLQu+YIqWocRGulZVZZqCwq15Xyuu1hfiWZeuCltRjE/JG896\nKBLIqrymQStg2oVPVo0BEIuz12IcWkxyG1Z1mLSXmQKBgQD8JE010FsSUx4PknuH\nK2HlWuUyE9DBPvj3qDjQw1Wez7v/d5ChSdDM/epEAOXYoSTd26d288M1Bv8Y+Ajp\nTBRD/8HuO0PZrvLgpyUwMtoL3EFyklrp+HxQhlAL7vWOFFxsaFQoWWUgg/qED864\nV/N69XprpDELv+w29aDMFnDOuQKBgQDjOLqYVtqxTQ9SOsEA3P5XKYLYLYf9we8S\nzNVqThMMaGOxXMwpE5/IMUX8eZXLLfTtFnY3SFe0GaoeWMTwh9M7AMiWNVBz3IjA\nA6BMUiGrdD1fy6GKc6l/Tj6LV9F7ylq+B2fdw9+OrFPKy6j2LDGcXmo5bzcoYPus\n1DrLQvIpfQKBgC8WXHDzUz6t1QxVb8pDeMnLWsgqWS7torMlcE7UW9YHt3UzEAh+\n74aI2MoQXNxC486m6bRWO5tYjiVMlOV0tsgoKEBkQvyRJnx72n8Q0BWs8XADEwVk\nyVqEash/vM3m0YfRR/4tC6yx2QP2q8VTb34D//PAOwSVt/hfkMLsYe7JAoGBAI3i\n8sIGGnH0yMh0X+kGFtye01HivLS80WlP90R2lHZ/CSHL7MEJvBDqk+VglyVVAUi7\naf6DciDIle51SCVa65BAoQELMb3nzIz6trJx5wyFfX3ATpOCPil81pl0sR838QoQ\n3c8hbQxOl9Re8JcoaaJXYsWSqULRrNbzf/NFTqqRAoGBAOsuIdZHbF/z2IlcOv5r\nW2abvn645mhxzfYp2nV72Vk+v5rjnBMA/c0yik2zYhe4ltmLkSn8Xs+m8bpRMkK1\n7wmUP1ZUvxR9Hzn7uq+MbCdI4NKwsPBZIABa063lJz9cWUbq2I0m/UmSUNFTar7u\nb1xvPLrnUdBxNL8kQM0DK1Iu\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-tpgzx@gdfor-prod.iam.gserviceaccount.com",
+    "client_id": "108213666010022249808",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-tpgzx%40gdfor-prod.iam.gserviceaccount.com"
+}
