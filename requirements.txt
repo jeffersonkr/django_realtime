@@ -14,7 +14,7 @@ chardet==3.0.4
 constantly==15.1.0
 cryptography==2.8
 daphne==2.3.0
-Django==2.2.6
+Django==2.2.13
 firebase-admin==3.1.0
 google-api-core==1.14.3
 google-api-python-client==1.7.11
